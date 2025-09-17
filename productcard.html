@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+  <style>
+    
+    .product-card {
+      border: 2px solid #333;      
+      border-radius: 12px;          
+      padding: 15px;                
+      margin: 20px auto;          
+      width: 60%;                   
+      max-width: 500px;             
+      height: 400px;                
+      box-sizing: border-box;
+      text-align: center;
+      background-color: #f9f9f9;    
+    }
+
+    .product-card img {
+      max-width: 100%;   
+      min-width: 200px;  
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-card h2 {
+      margin: 10px 0;
+      font-size: 1.5em;
+      color: #222;
+    }
+
+    .product-card ul {
+      text-align: left;
+      margin: 10px 20px;
+      padding: 0;
+      list-style: disc;
+      color: #444;
+    }
+
+    .product-card p {
+      margin: 5px 15px;
+      font-size: 1em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-card">
+    <img src="data:image/jpeg;base64,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" alt="Wireless Bluetooth Headphones">
+    <h2>Wireless Bluetooth Headphones</h2>
+    <ul>
+      <li>High-quality stereo sound</li>
+      <li>Up to 20 hours battery life</li>
+      <li>Noise cancellation technology</li>
+      <li>Lightweight and foldable design</li>
+    </ul>
+    <p>
+      Experience music like never before with our Wireless Bluetooth Headphones. 
+      Designed for comfort and long-lasting use.
+    </p>
+  </div>
+</body>
+</html>
