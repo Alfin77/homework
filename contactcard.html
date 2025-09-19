@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Company Contact Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    
+    .profile-card {
+      margin: 100px auto; 
+      width: 80%;
+      max-width: 900px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: flex;              
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .profile-left {
+      display: flex;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+
+    .profile-info {
+      border-left: 2px solid #ccc; 
+      padding-left: 20px;
+    }
+
+    .profile-info h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .profile-info p {
+      margin: 8px 0;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    .contact-info {
+      border: 1px solid #333;
+      padding: 10px;
+      background-color: #f9f9f9;
+      min-width: 220px;
+      text-align: left;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Company Contact Card
+  </header>
+
+  <div class="profile-card">
+
+    <div class="profile-left">
+      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Profile Image" class="profile-img">
+
+      <div class="profile-info">
+        <h2>John Doe</h2>
+        <p><strong>Title:</strong> Senior Developer</p>
+
+        <p>John is an experienced software engineer with over 10 years of professional expertise in designing and developing scalable web applications. He has a strong background in cloud-based solutions and has successfully delivered numerous enterprise-level projects across different industries.</p>
+
+        <p>Throughout his career, John has worked with cross-functional teams to improve system performance, reduce downtime, and implement innovative solutions. His ability to translate complex business requirements into efficient technical implementations makes him a valuable asset to any organization.</p>
+
+    
+      </div>
+    </div>
+
+    
+    <div class="contact-info">
+      <p><strong>Phone:</strong>  123 456 7890</p>
+      <p><strong>Email:</strong> john.starc1@gmail.com</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
