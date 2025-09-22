@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Blog Post</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .blog-post {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .blog-post h1 {
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .author {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .blog-post p::first-line {
+      font-weight: bold;
+    }
+
+    .blog-post p::first-letter {
+      font-size: 24px;
+      color: darkblue;
+    }
+
+    blockquote {
+      margin: 15px 0;
+      padding: 10px 20px;
+      border-left: 4px solid #666;
+      background: #f0f0f0;
+      font-style: italic;
+    }
+
+    blockquote::before {
+      content: "“ ";
+      font-size: 20px;
+      color: #666;
+    }
+
+    a:link {
+      color: blue;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    h4 {
+      display: inline-block;
+      margin-right: 10px;
+      color: #444;
+    }
+
+    h4 + h4 {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="blog-post">
+    <h1>My First Blog Post</h1>
+    <p class="author">By David James</p>
+    
+    <p>
+      Blogging is a wonderful way to express your thoughts, ideas, and creativity. 
+      You can share knowledge, connect with others, and even inspire people.
+    </p>
+
+    <blockquote>
+      Writing is the painting of the voice."
+    </blockquote>
+
+    <p>
+      Want to learn more? Visit my 
+      <a href="https://example.com">website</a> for more articles.
+    </p>
+
+    <h4>Category</h4>
+    <h4>Technology</h4>
+  </div>
+</body>
+</html>
