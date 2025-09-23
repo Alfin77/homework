@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Featured Blog Section - Cricket</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #fafafa;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: darkgreen;
+    }
+
+    .blog-section {
+      display: flex;
+      gap: 20px;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .blog-post {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      background: #fff;
+      
+    }
+
+    .blog-post img[src$=".jpg"] {
+      width: 100%;
+      height: auto;
+      border-top-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    .blog-post h2 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .blog-post p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    a[href^="https"] {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .blog-section {
+        flex-direction: column;
+        font-size: 14px;
+      }
+    }
+
+    @media (orientation: portrait) {
+      .blog-section {
+        background-color: lightyellow;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Featured Cricket Blog</h1>
+
+  <div class="blog-section">
+    <div class="blog-post">
+      <h2>The Rise of T20 Cricket</h2>
+      <img src="https://picsum.photos/400/250.jpg?random=11" alt="Cricket Image 1">
+      <p>T20 cricket has transformed the sport with its fast-paced action, thrilling finishes, and global appeal. Fans love the explosive batting and nail-biting games that make every match unforgettable.</p>
+      <a href="https://example.com/t20">Read More</a>
+    </div>
+
+    <div class="blog-post">
+      <h2>Top 5 Cricket Legends</h2>
+      <img src="https://picsum.photos/400/250.jpg?random=12" alt="Cricket Image 2">
+      <p>From Sachin Tendulkar to Brian Lara, cricket has given us legends whose records and stories inspire millions. Their dedication and passion have left a permanent mark on the game’s history.</p>
+      <a href="http://example.com/legends">Read More</a>
+    </div>
+
+    <div class="blog-post">
+      <h2>Cricket World Cup Moments</h2>
+      <img src="https://picsum.photos/400/250.jpg?random=13" alt="Cricket Image 3">
+      <p>The Cricket World Cup has produced some of the most iconic moments in sports—from last-ball thrillers to record-breaking performances. These memories live on in the hearts of fans worldwide.</p>
+      <a href="https://example.com/worldcup">Read More</a>
+    </div>
+  </div>
+</body>
+</html>

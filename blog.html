@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Blog Post</title>
+  <title>Blog Post</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,8 +13,7 @@
     .blog-post {
       background: #fff;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
       max-width: 600px;
       margin: auto;
     }
@@ -26,17 +25,18 @@
 
     .author {
       font-size: 14px;
-      color: #777;
+      color: #777; 
       margin-bottom: 15px;
     }
 
-    .blog-post p::first-line {
+    .author + p::first-letter{
+      font-size: 28px;
+      color: darkblue;
       font-weight: bold;
     }
 
-    .blog-post p::first-letter {
-      font-size: 24px;
-      color: darkblue;
+    .author + p::first-line{
+      font-weight: bold;
     }
 
     blockquote {
@@ -84,17 +84,17 @@
     <p class="author">By David James</p>
     
     <p>
-      Blogging is a wonderful way to express your thoughts, ideas, and creativity. 
+    Blogging is a wonderful way to express your thoughts, ideas, and creativity. 
       You can share knowledge, connect with others, and even inspire people.
     </p>
 
     <blockquote>
-      Writing is the painting of the voice."
-    </blockquote>
+  Success is not the result of spontaneous combustion. You must set yourself on fire with determination, hard work, and a belief that every step forward, no matter how small, brings you closer to your dreams.
+</blockquote>
 
     <p>
       Want to learn more? Visit my 
-      <a href="https://example.com">website</a> for more articles.
+      <a href="https://www.google.com">website</a> for more articles.
     </p>
 
     <h4>Category</h4>
