@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Shop Calculator</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        var item1 = "Rice";
+        var item2 = "Sugar";
+        var item3 = "Wheat";
+
+
+        var pricerice = 2.5;
+        var pricesugar = 3.0;
+        var pricewheat = 4.0;
+
+        var qtyrice = 2;
+        var qtysugar = 1;
+        var qtywheat = 3;
+
+        var costrice = pricerice * qtyrice;
+        var costsugar = pricesugar * qtysugar;
+        var costwheat = pricewheat * qtywheat;
+
+        console.log("Cost of " + item1 + ": $" + costrice);
+        console.log("Cost of " + item2 + ": $" + costsugar);
+        console.log("Cost of " + item3 + ": $" + costwheat);
+
+        var totalbill = costrice + costsugar + costwheat;
+        console.log("Total Bill: $" + totalbill);
+
+        qtysugar = 3; 
+        costsugar = pricesugar * qtysugar;
+
+    
+        totalbill = costrice + costsugar + costwheat;
+
+        console.log("Updated Quantity of Sugar: " + qtysugar + " kg");
+        console.log("Updated Cost of Sugar: $" + costsugar);
+        console.log("Updated Total Bill: $" + totalbill);
+    </script>
+</body>
+</html>
