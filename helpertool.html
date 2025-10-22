@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Helper Tool</title>
+</head>
+<body>
+    <script>
+     var userProfile = {
+     username: "   CoolUser99   ",
+     bio: "   I LOVE coding! JavaScript is Great!!   "
+     }
+
+    function cleanUserBio(profile) {
+
+    var cleanUsername = profile.username.trim().toLowerCase();
+    var cleanBio = profile.bio.trim().toLowerCase();
+
+     cleanBio = cleanBio.replaceAll("javascript", "js");
+
+     var bioLength = cleanBio.length;
+
+      return {
+               username: cleanUsername,
+               bio: cleanBio,
+               bioLength: bioLength
+             }
+        }
+
+        var cleanedProfile = cleanUserBio(userProfile);
+
+        console.log("Cleaned Username:", cleanedProfile.username);
+        console.log("Cleaned Bio:", cleanedProfile.bio);
+        console.log("Bio Length:", cleanedProfile.bioLength);
+    </script>
+</body>
+</html>
