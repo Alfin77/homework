@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Result Generator</title>
+</head>
+<body>
+    <script>
+        var mysteryLevel = Math.floor(Math.random() * 50) + 1;
+        console.log("Mystery Level(1–50): " + mysteryLevel);
+
+        var userScoreString = "45";
+        console.log("User Score(String): " + userScoreString);
+
+        var userScore = Number(userScoreString);
+        console.log("User Score(Number): " + userScore);
+
+        var difference = Math.abs(mysteryLevel - userScore);
+        console.log("Absolute Difference: " + difference);
+
+        var squareRoot = Math.sqrt(userScore);
+        var roundedSquareRoot = Math.round(squareRoot)
+        console.log("Square Root of User Score: " + roundedSquareRoot);
+
+        var piValue = Math.PI;
+        console.log("Value of Pi: " + piValue);
+
+        var Result = "20" * 5; 
+        console.log('Result of "20" * 5 : ' + Result);
+
+        var highest = Math.max(10, 20, mysteryLevel);
+        var lowest = Math.min(10, 20, mysteryLevel);
+        console.log("Highest Value: " + highest);
+        console.log("Lowest Value: " + lowest);
+    </script>
+</body>
+</html>
