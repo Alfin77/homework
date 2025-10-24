@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile Access</title>
+</head>
+<body>
+  <button onclick="checkAccess()">Check Access</button>
+  <script>
+    
+    var user = {
+      name: "David",
+      age: 20,
+      isAdmin: true
+    };
+
+    function checkAccess() {
+      
+      var hasAge = "age" in user;
+      console.log("Does 'age' exist in user object? ", hasAge);
+
+      var message = (user.age >= 18 && user.isAdmin)
+        ? "Access Granted"  : "Access Denied";
+
+      console.log("User Name:", user.name);
+      console.log("User Age:", user.age);
+      console.log("Is Admin:", user.isAdmin);
+      console.log("Result:", message);
+
+      delete user.age;
+
+      console.log("After deleting 'age' property:", user);
+    }
+  </script>
+</body>
+</html>
