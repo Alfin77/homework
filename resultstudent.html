@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Result Dashboard</title>
+</head>
+<body>
+  
+  <script>
+
+    var studentNames = ["Alice", "Bob", "Charlie", "David", "Eve"];
+    var studentScores = [75, 50, 92, 33, 88];
+
+    var students = studentNames.map(function(name, index) {
+      return { name: name, score: studentScores[index] };
+    });
+
+    console.log(" All Student Names ");
+    studentNames.map(function(name) {
+      console.log(name);
+    });
+
+    var highScorers = students.filter(function(student) {
+      return student.score > 60;
+    }).map(function(student) {
+      return student.name;
+    });
+
+    console.log(" Students Scored More Than 60 ");
+    console.log(highScorers);
+
+    var totalScore = studentScores.reduce(function(sum, score) {
+      return sum + score;
+    }, 0);
+
+    console.log(" Total Score of All Students ");
+    console.log(totalScore);
+
+    var allPassed = studentScores.every(function(score) {
+      return score > 35;
+    });
+
+    console.log(" Did All Students Pass? ");
+    console.log(allPassed);
+
+    var hasTopper = studentScores.some(function(score) {
+      return score > 90;
+    });
+
+    console.log(" Did Any Student Score More Than 90? ");
+    console.log(hasTopper);
+
+    var sortedStudents = students.sort(function(a, b) {
+      return b.score - a.score;
+    });
+
+    console.log(" Students Sorted by Score (High to Low) ");
+    sortedStudents.map(function(student) {
+      console.log(student.name + "  Score: " + student.score);
+    });
+  </script>
+</body>
+</html>
