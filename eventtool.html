@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Reminder Tool</title>
+</head>
+<body>
+  <script>
+    var inputDate = "2003-08-04";
+    console.log("Entered Date:", inputDate);
+
+    var pastDate = new Date(inputDate);
+    var year = pastDate.getFullYear();
+    var monthNames = [ "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December" ];
+    var monthName = monthNames[pastDate.getMonth()];
+    var day = pastDate.getDate();
+
+    console.log("Year:", year);
+    console.log("Month:", monthName);
+    console.log("Day:", day);
+
+    var today = new Date();
+    var yearsPassed = today.getFullYear() - pastDate.getFullYear();
+
+    console.log("Today's Year:", today.getFullYear());
+    console.log("Years Passed:", yearsPassed);
+
+    var oneYearLater = new Date(pastDate);
+    oneYearLater.setFullYear(pastDate.getFullYear() + 1);
+
+    var message;
+
+    if (today >= oneYearLater) {
+      message = "It has been more than a year since that date.";
+    } else {
+      message = "It has been less than a year since that date.";
+    }
+    console.log("Final Result:", day + " " + monthName + ", " + year);
+    console.log(message);
+  </script>
+</body>
+</html>
