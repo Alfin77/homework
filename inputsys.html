@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guess the Number Game</title>
+</head>
+<body>
+  <script>
+    var correctNumber = 3;      
+    var validChances = 0;      
+    var message = "";           
+
+    while (validChances < 5) {
+      var guess = parseInt(prompt("Enter a number between 1 and 5:"));
+
+      if (isNaN(guess)) {
+        console.log(" Invalid input! Not a number.");
+        continue; 
+      } 
+      else if (guess < 1) {
+        console.log(" Number is below 1. Invalid input! ");
+        continue; 
+      } 
+      else if (guess > 5) {
+        console.log(" Number is above 5. Invalid input! ");
+        continue; 
+      } 
+      else {
+        validChances = validChances + 1;
+
+        var word = "";
+        switch (guess) {
+          case 1: word = "One"; break;
+          case 2: word = "Two"; break;
+          case 3: word = "Three"; break;
+          case 4: word = "Four"; break;
+          case 5: word = "Five"; break;
+        }
+
+        console.log(" You entered: " + word + " (" + guess + ")");
+      }
+
+      if (guess === correctNumber) {
+        message = " You guessed it right!";
+        break; 
+      } 
+      else {
+        console.log(" Wrong guess. Try again!");
+      }
+    }
+
+    if (message === "") {
+      message = "Game Over! You used all 5 valid chances.";
+    }
+
+    console.log(message);
+  </script>
+</body>
+</html>
