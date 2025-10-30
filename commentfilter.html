@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comment Filter System</title>
+</head>
+<body>
+  <script>
+    function filterComment() {
+      var comment = prompt("Enter your Comment:");
+
+      var cleanedComment = comment.replace(/(bad|ugly|stupid)/gi, " *** ");
+
+      var numbers = comment.match(/\d+/g);
+      var numberCount = numbers ? numbers.length : 0;
+
+      var capitalWords = comment.match(/\b[A-Z][a-zA-Z]*/g);
+      var capitalWordCount = capitalWords ? capitalWords.length : 0;
+
+      var hasBanned = /(bad|ugly|stupid)/i.test(comment);
+
+      console.log("Entered Comment:", comment);
+      console.log("Contains Banned Word:", hasBanned);
+      console.log("Cleaned Comment:", cleanedComment);
+      console.log("Count of Numbers:", numberCount);
+      console.log("Count of Capitalized Words:", capitalWordCount);
+      console.log("Capitalized Words:", capitalWords);
+    }
+
+    filterComment();
+  </script>
+</body>
+</html>
