@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> JSON Feedback </title>
+</head>
+<body>
+  <script>
+    var feedbackJSON = '{"name": "Kevin", "feedback": "THANK you for your help"}';
+
+    var checkFeedback = () => {
+      try {
+
+        let user = JSON.parse(feedbackJSON); 
+
+        let feedbackText = user.feedback.toLowerCase();
+
+        if (feedbackText.includes("thank")) {
+          console.log("Positive feedback received");
+        } else {
+          console.log("Feedback noted");
+        }
+      } 
+      catch (error) {
+        console.log(" Error: Invalid JSON data");
+      }
+    };
+
+    checkFeedback();
+  </script>
+</body>
+</html>
