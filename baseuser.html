@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Information System</title>
+</head>
+<body>
+
+  <script>
+    class User {
+      constructor(name, age, email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+      }
+
+      get getName() {
+        return this.name;
+      }
+
+      get getAge() {
+        return this.age;
+      }
+
+      set setEmail(newEmail) {
+        if (newEmail.includes("@")) {
+          this.email = newEmail;
+          console.log(" Email updated successfully :", newEmail);
+        } else {
+          console.log(" Invalid email!");
+        }
+      }
+
+      showDetails() {
+        console.log(" User Name:", this.name);
+        console.log(" Age:", this.age);
+        console.log(" Email:", this.email);
+      }
+    }
+
+    var user1 = new User("Smith", 20, "smith@example.com");
+
+    console.log("Initial User Details:");
+    user1.showDetails();
+
+    console.log(" Invalid email - ('smith.example.com'):");
+    user1.setEmail = "smith.example.com";
+
+    console.log(" Valid email - ('smith123@gmail.com'):");
+    user1.setEmail = "smith123@gmail.com";
+
+    console.log("Final User Details:");
+    console.log("Name:", user1.getName);
+    console.log("Age:", user1.getAge);
+    console.log("Email:", user1.email);
+  </script>
+</body>
+</html>
