@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Page</title>
+</head>
+<body>
+  <h2>Feedback Form</h2>
+  <form id="feedbackForm">
+    <label>Enter your name:</label><br>
+    <input type="text" id="userName"><br><br>
+
+    <label>Enter your feedback:</label><br>
+    <textarea id="userFeedback" rows="4" cols="30"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Your Feedback:</h3>
+  <p id="displayFeedback"></p>
+  <p id="confirmationMessage"></p>
+
+  <script>
+    var form = document.getElementById("feedbackForm");
+    var nameInput = document.getElementById("userName");
+    var feedbackInput = document.getElementById("userFeedback");
+    var feedbackDisplay = document.getElementById("displayFeedback");
+    var confirmation = document.getElementById("confirmationMessage");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      var nameValue = nameInput.value;
+      var feedbackValue = feedbackInput.value;
+
+      feedbackDisplay.textContent = nameValue + ": " + feedbackValue;
+      feedbackDisplay.style.color = "black";
+
+      confirmation.textContent = "Thanks for your feedback!";
+      confirmation.style.color = "green";
+
+      setTimeout(function() {
+        confirmation.textContent = "";
+      }, 5000);
+    });
+
+    feedbackDisplay.addEventListener("mouseover", function() {
+      feedbackDisplay.style.color = "blue";
+    });
+
+    feedbackDisplay.addEventListener("mouseout", function() {
+      feedbackDisplay.style.color = "black";
+    });
+  </script>
+</body>
+</html>
