@@ -1,0 +1,16 @@
+use BakeryShop
+// create new database
+
+switched to db BakeryShop
+
+db.Orders.insert({customerName: "Alice Johnson",item: "Chocolate Cake",quantity: 2,totalPrice: 500})
+// create collection and insert values
+
+show collections
+// view the list of collections
+
+db.Orders.drop()
+// drop the collection
+
+db.dropDatabase()
+// drop the database
