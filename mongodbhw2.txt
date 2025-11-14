@@ -1,0 +1,76 @@
+use CompanyDB
+//create new database
+
+switched to db CompanyDB
+
+
+db.Employees.insertOne({
+  name: "Ravi Kumar",
+  age: 28,
+  isActive: true,
+  salary: 45000.50,
+  skills: ["JavaScript", "Node.js", "MongoDB"],
+  contact: { email: "ravi@example.com", phone: "9876543210" },
+  joinedDate: new Date(),
+  managerAssigned: null
+})
+//create collection Employees and insert first record
+
+{
+  acknowledged: true,
+  insertedId: ObjectId("6720abcd1234567890ef1111")
+}
+
+
+db.Employees.insertMany([
+  {
+    name: "Aarav Sharma",
+    age: 32,
+    isActive: false,
+    salary: 52000,
+    skills: ["Python", "Django", "Data Analysis"],
+    contact: { email: "aarav@example.com", phone: "9123456780" },
+    joinedDate: new Date(),
+    managerAssigned: "Ravi Kumar"
+  },
+  {
+    name: "Neha Singh",
+    age: 26,
+    isActive: true,
+    salary: 40000,
+    skills: ["HTML", "CSS", "JavaScript", "React"],
+    contact: { email: "neha@example.com", phone: "9988776655" },
+    joinedDate: new Date(),
+    managerAssigned: null
+  },
+  {
+    name: "Vikram Rao",
+    age: 29,
+    isActive: true,
+    salary: 60000.75,
+    skills: ["Java", "Spring Boot", "Microservices"],
+    contact: { email: "vikram@example.com", phone: "9090909090" },
+    joinedDate: new Date(),
+    managerAssigned: "Aarav Sharma"
+  }
+])
+//insert 3 more employee records at once
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6720abcd1234567890ef2222"),
+    '1': ObjectId("6720abcd1234567890ef3333"),
+    '2': ObjectId("6720abcd1234567890ef4444")
+  }
+}
+
+
+show collections
+//view list of collections
+
+Employees
+
+
+db.Employees.find().p
+//display all employee records
