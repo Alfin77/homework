@@ -1,0 +1,31 @@
+// switch to database
+use BookStoreDB
+
+// insert sample data
+db.Books.insertMany([
+    { title: "Harry Potter and the Philosopher's Stone", author: "J.K. Rowling", price: 399.99, year: 1997, available: true },
+    { title: "The Hobbit", author: "J.R.R. Tolkien", price: 299.99, year: 1937, available: true },
+    { title: "The Da Vinci Code", author: "Dan Brown", price: 499.99, year: 2003, available: false },
+    { title: "A Game of Thrones", author: "George R.R. Martin", price: 599.99, year: 1996, available: true },
+    { title: "The Girl on the Train", author: "Paula Hawkins", price: 349.99, year: 2015, available: true },
+    { title: "Becoming", author: "Michelle Obama", price: 449.99, year: 2018, available: true },
+    { title: "The Catcher in the Rye", author: "J.D. Salinger", price: 199.99, year: 1951, available: false },
+    { title: "The Night Circus", author: "Erin Morgenstern", price: 299.99, year: 2011, available: true },
+    { title: "1984", author: "George Orwell", price: 249.99, year: 1949, available: true },
+    { title: "Educated", author: "Tara Westover", price: 399.99, year: 2018, available: false }
+]);
+
+// Find and display all books priced less than 500
+db.Books.find({ price: { $lt: 500 } })
+
+// Find one book written by "J.K. Rowling"
+db.Books.findOne({ author: "J.K. Rowling" })
+
+// Find books published after 2010 AND priced >= 300
+db.Books.find({ year: { $gt: 2010 }, price: { $gte: 300 } })
+
+// Find books priced < 200 OR not available
+db.Books.find({ $or: [ { price: { $lt: 200 } }, { available: false } ] })
+
+// Find books whose price is NOT equal to 450
+db.Books.find({ price: { $ne: 450 } })
