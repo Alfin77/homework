@@ -1,0 +1,54 @@
+// Use database
+use LibraryDB
+
+// Insert sample books
+db.Books.insertMany([
+    { title: "Pride and Prejudice", author: "Jane Austen", year: 1813, copies: 8, available: true },
+    { title: "Data Structures", author: "John Smith", year: 2015, copies: 3, available: true },
+    { title: "Modern JavaScript", author: "Emily Brown", year: 2020, copies: 4, available: false },
+    { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925, copies: 6, available: true },
+    { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960, copies: 10, available: true },
+    { title: "A Brief History of Time", author: "Stephen Hawking", year: 1988, copies: 2, available: false },
+    { title: "The C Programming Language", author: "Unknown", year: 1978, copies: 5, available: true },
+    { title: "Sapiens", author: "Yuval Noah Harari", year: 2014, copies: 7, available: true },
+    { title: "The Alchemist", author: "Paulo Coelho", year: 1988, copies: 1, available: false },
+    { title: "Dune", author: "Frank Herbert", year: 1965, copies: 4, available: true }
+])
+
+// Books after 2010
+db.Books.find({ year: { $gt: 2010 } })
+
+// One book by Jane Austen
+db.Books.findOne({ author: "Jane Austen" })
+
+// Copies > 5 and year <= 2000
+db.Books.find({
+    copies: { $gt: 5 },
+    year: { $lte: 2000 }
+}).pretty()
+
+// Copies < 3 OR not available
+db.Books.find({
+    $or: [
+        { copies: { $lt: 3 } },
+        { available: false }
+    ]
+})
+
+// Update copies of Data Structures
+db.Books.update(
+    { title: "Data Structures" },
+    { $set: { copies: 10 } }
+)
+
+// Change availability of Modern JavaScript 
+db.Books.update(
+    { title: "Modern JavaScript" },
+    { $set: { available: true } }
+)
+
+// Remove one book by Unknown
+db.Books.remove(
+    { author: "Unknown" },
+    { justOne: true }
+)
