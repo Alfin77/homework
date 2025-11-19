@@ -1,0 +1,26 @@
+// Use the database
+use CompanyDB
+
+// Insert sample data
+db.employees.insertMany([
+    { name: "Alice Johnson", department: "Engineering", salary: 75000, email: "alice.johnson@company.com" },
+    { name: "Bob Smith", department: "Marketing", salary: 65000, email: "bob.smith@company.com" },
+    { name: "Charlie Brown", department: "Engineering", salary: 80000, email: "charlie.brown@company.com" },
+    { name: "Diana Lee", department: "HR", salary: 60000, email: "diana.lee@company.com" },
+    { name: "Emma Davis", department: "Sales", salary: 70000, email: "emma.davis@company.com" },
+    { name: "Frank Wilson", department: "Engineering", salary: 82000, email: "frank.wilson@company.com" },
+    { name: "Grace Kim", department: "Marketing", salary: 68000, email: "grace.kim@company.com" },
+    { name: "Henry Chen", department: "HR", salary: 62000, email: "henry.chen@company.com" }
+])
+
+// Show only name and department
+db.employees.find({}, { name: 1, department: 1, _id: 0 })
+
+// Show first 4 employees
+db.employees.find().limit(4)
+
+// Skip first 2 and show next 3 (name, salary only)
+db.employees.find({}, { name: 1, salary: 1, _id: 0 }).skip(2).limit(3)
+
+// Skip first 5 and show next 2 (name, email only)
+db.employees.find({}, { name: 1, email: 1, _id: 0 }).skip(5).limit(2)
