@@ -1,0 +1,23 @@
+// Create the database
+use OnlineStore
+
+// Add some products to the products collection
+db.products.insertMany([
+    { name: "Laptop", category: "Electronics", price: 800, stock: 15 },
+    { name: "Smartphone", category: "Electronics", price: 600, stock: 25 },
+    { name: "Headphones", category: "Accessories", price: 120, stock: 40 },
+    { name: "Office Chair", category: "Furniture", price: 200, stock: 10 },
+    { name: "Gaming Keyboard", category: "Accessories", price: 150, stock: 20 }
+])
+
+// Make an index on category
+db.products.createIndex({ category: 1 })
+
+// Make an index on price in descending order
+db.products.createIndex({ price: -1 })
+
+// Show all indexes in the products collection
+db.products.getIndexes()
+
+// Remove the index on category
+db.products.dropIndex("category_1")
