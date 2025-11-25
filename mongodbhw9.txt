@@ -1,0 +1,43 @@
+// Create the database
+use mashupdb
+
+// Insert sample students
+db.students.insertMany([
+  { name: "Arjun", mark: 88 },
+  { name: "Fatima", mark: 79 },
+  { name: "Karthik", mark: 91 },
+  { name: "Lakshmi", mark: 65 },
+  { name: "Daniel", mark: 73 },
+  { name: "Meera", mark: 82 },
+  { name: "Rohit", mark: 69 }
+])
+
+// Export ALL student data (view all documents)
+db.getCollection('students')
+  .find({})
+
+
+// Export only _id, name, and mark (CSV-style projection)
+db.getCollection('students')
+  .find({}, { _id: 1, name: 1, mark: 1 })
+
+
+// Export only FIRST 4 records(JSON)
+db.getCollection('students')
+  .find({})
+  .limit(4)
+
+
+// Export 3 records sorted by _id ascending(JSON)
+db.getCollection('students')
+  .find({})
+  .sort({ _id: 1 })
+  .limit(3)
+
+
+// Export 6 records, SKIP first 2, sorted by _id ascending(JSON)
+db.getCollection('students')
+  .find({})
+  .sort({ _id: 1 })
+  .skip(2)
+  .limit(6)
