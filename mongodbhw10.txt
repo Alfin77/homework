@@ -1,0 +1,47 @@
+// Create database
+use supportDB
+
+
+// Add some example support tickets
+db.tickets.insertMany([
+  {
+    subject: "Login error",
+    description: "User cannot log in because of an unknown error.",
+    createdAt: new Date()
+  },
+  {
+    subject: "Payment failed",
+    description: "Customer reports payment failed during checkout.",
+    createdAt: new Date()
+  },
+  {
+    subject: "Page not loading",
+    description: "Home page takes too long to load for some users.",
+    createdAt: new Date()
+  }
+])
+
+
+
+// Make a text index on subject and description
+db.tickets.createIndex({
+  subject: "text",
+  description: "text"
+})
+
+
+// Search for tickets that contain the word “error”
+db.tickets.find({
+  $text: { $search: "error" }
+})
+
+
+// Show all indexes to confirm our text index is created
+db.tickets.getIndexes()
+
+
+// Delete the text index after testing
+db.tickets.dropIndex({
+  subject: "text",
+  description: "text"
+})
